@@ -1,5 +1,18 @@
-
+" remove plugins?
 "
+" File explorer - netrw (network read/write)
+let g:netrw_browse_split = 4 " open file in the previous window; keep one window active
+let g:netrw_liststyle = 3 " tree view explorer
+let g:netrw_banner = 0 " remove banner in file explorer
+let g:netrw_winsize = 25 " limit explorer width
+let g:netrw_altv = 1 " alternate vertical: the plugin opens the file explorer window vertically to the right of the current buffer window
+augroup ProjectDrawer " start a new autocommand group, or a set of commands automatically responding to an event/trigger
+  autocmd! " clear all commands in ProjectDrawer, a security measure in the case of any existing augroup with the same name
+  " VimEnter: when vim is started with any file (the Regex *)
+  " open it in a vertical way
+  autocmd VimEnter * :Vexplore
+augroup END
+
 " Indentation options {{{1
 "
 " Indentation settings according to personal preference.
@@ -31,8 +44,8 @@ set nocompatible
 filetype indent plugin on
 
 " Enable syntax highlighting
-syntax on
-
+"syntax on
+syntax enable
 
 
 "------------------------------------------------------------
