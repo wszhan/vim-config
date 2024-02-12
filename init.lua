@@ -1,4 +1,4 @@
-vim.opt.guicursor = ""
+require('plugins')
 
 -- Indentation options
 vim.opt.shiftwidth = 2
@@ -23,6 +23,7 @@ vim.opt.relativenumber = true
 vim.opt.wrap = false
 
 -- init lazy.nvim
+-- explanations: https://lsp-zero.netlify.app/v3.x/tutorial.html#install-the-plugin-manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -43,7 +44,8 @@ require("lazy").setup(
 
 -- color scheme
 vim.o.background = "dark" -- or "light" for light mode
-vim.cmd("colorscheme gruvbox")
+-- vim.cmd("colorscheme gruvbox")
+vim.cmd.colorscheme('gruvbox')
 
-require("plug-configs")
-
+require('lsp')
+require('plug-configs')
