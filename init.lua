@@ -19,8 +19,8 @@ vim.opt.smartindent = true
 -- Hybrid line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
-
 vim.opt.wrap = false
+vim.g.mapleader = " "
 
 -- init lazy.nvim
 -- explanations: https://lsp-zero.netlify.app/v3.x/tutorial.html#install-the-plugin-manager
@@ -37,9 +37,11 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+
 require("lazy").setup(
-  require("lua.plugins"),
-  {} -- opts placeholder
+  -- require("lua.plugins"),
+  "plugins"
+  -- {} -- opts placeholder
 )
 
 -- color scheme
@@ -49,5 +51,6 @@ vim.opt.termguicolors = true
 -- vim.cmd.colorscheme('gruvbox')
 
 -- require('lsp')
+
 require('plug-configs')
 

@@ -1,6 +1,6 @@
 -- key bindings
-vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex) -- vim file explorer
+-- vim.keymap.set("n", "<leader>e", vim.cmd.Ex) -- vim file explorer
+-- vim.keymap.set("n", "<leader>e", ':Neotree filesystem reveal right <CR>')
 
 local builtin = require('telescope.builtin')
 local keybindings_opts = { noremap = true, silent = true }
