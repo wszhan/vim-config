@@ -38,14 +38,16 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(
-  require("plugins"),
+  require("lua.plugins"),
   {} -- opts placeholder
 )
 
 -- color scheme
 vim.o.background = "dark" -- or "light" for light mode
 -- vim.cmd("colorscheme gruvbox")
-vim.cmd.colorscheme('gruvbox')
+vim.opt.termguicolors = true
+-- vim.cmd.colorscheme('gruvbox')
 
-require('lsp')
+-- require('lsp')
 require('plug-configs')
+
