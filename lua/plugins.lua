@@ -2,8 +2,29 @@ local plugins = {
 
   -- -- LSP Setup Start -- --
   --- Use the two plugins below if you want to manage the language servers from neovim
-  --- { 'williamboman/mason.nvim' }, -- check README for requirements
-  --- { 'williamboman/mason-lspconfig.nvim' },
+  {
+    'williamboman/mason.nvim',
+    config = function()
+      require("mason").setup()
+    end,
+  }, -- check README for requirements
+  {
+    'williamboman/mason-lspconfig.nvim',
+    config = function()
+      require("mason-lspconfig").setup({
+        ensure_installed = {
+          "lua_ls",
+        }
+      })
+    end,
+  },
+  {
+    "neovim/nvim-lspconfig", -- https://github.com/neovim/nvim-lspconfig
+    config = function()
+      local lspconfig = require('lspconfig')
+      lspconfig.lua_ls.setup({})
+    end,
+  }
   -- dependencies for LSP Zero to work
   --- {
   ---   'VonHeikemen/lsp-zero.nvim',
