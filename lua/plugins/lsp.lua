@@ -41,7 +41,7 @@ local plugins = {
       })
       lspconfig.ruff.setup({
         capabilities = capabilities,
-        cmd = { "/usr/local/bin/ruff", "server" },
+        cmd = { "ruff", "server" },
         filetypes = { "python" },
         root_dir = require("lspconfig.util").find_git_ancestor,
         on_attach = on_attach,
