@@ -19,3 +19,15 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.wrap = false
 vim.g.mapleader = " "
+
+vim.diagnostic.config({
+	virtual_text = {
+		prefix = "●", -- could also be "■", "▶", "▎", "⮞", etc.
+		spacing = 4,
+	},
+	signs = true,
+	underline = true,
+	update_in_insert = false,
+	severity_sort = true,
+})
+

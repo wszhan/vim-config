@@ -1,55 +1,56 @@
 local plugins = {
 
-  -- -- LSP Setup Start -- --
-  --- Use the two plugins below if you want to manage the language servers from neovim
-  {
-    'williamboman/mason.nvim',
-    config = function()
-      require("mason").setup()
-    end,
-  }, -- check README for requirements
-  {
-    'williamboman/mason-lspconfig.nvim',
-    config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = {
-          "lua_ls",
-        }
-      })
-    end,
-  },
-  {
-    "neovim/nvim-lspconfig", -- https://github.com/neovim/nvim-lspconfig
-    config = function()
-      local lspconfig = require('lspconfig')
-      lspconfig.lua_ls.setup({})
-    end,
-  }
-  -- dependencies for LSP Zero to work
-  --- {
-  ---   'VonHeikemen/lsp-zero.nvim',
-  ---   branch = 'v3.x',
-  ---   lazy = true,
-  ---   config = false
-  --- },
-  --- {
-  ---   'neovim/nvim-lspconfig',
-  ---   dependencies = {
-  ---     { 'hrsh7th/cmp-nvim-lsp' },
-  ---   }
-  --- },
-  -- Autocompletion
-  -- {
-  --   'hrsh7th/nvim-cmp',
-  --   dependencies = {
-  --     { 'L3MON4D3/LuaSnip' }
-  --   },
-  -- },
-  -- -- LSP Setup End -- --
+	-- -- LSP Setup Start -- --
+	--- Use the two plugins below if you want to manage the language servers from neovim
+	{
+		"williamboman/mason.nvim",
+		config = function()
+			require("mason").setup()
+		end,
+	}, -- check README for requirements
+	{
+		"williamboman/mason-lspconfig.nvim",
+		config = function()
+			require("mason-lspconfig").setup({
+				ensure_installed = {
+					"lua_ls",
+					"clangd",
+				},
+			})
+		end,
+	},
+	{
+		"neovim/nvim-lspconfig", -- https://github.com/neovim/nvim-lspconfig
+		config = function()
+			local lspconfig = require("lspconfig")
+			lspconfig.lua_ls.setup({})
+			lspconfig.clangd.setup({})
+		end,
+	},
+	-- dependencies for LSP Zero to work
+	--- {
+	---   'VonHeikemen/lsp-zero.nvim',
+	---   branch = 'v3.x',
+	---   lazy = true,
+	---   config = false
+	--- },
+	--- {
+	---   'neovim/nvim-lspconfig',
+	---   dependencies = {
+	---     { 'hrsh7th/cmp-nvim-lsp' },
+	---   }
+	--- },
+	-- Autocompletion
+	-- {
+	--   'hrsh7th/nvim-cmp',
+	--   dependencies = {
+	--     { 'L3MON4D3/LuaSnip' }
+	--   },
+	-- },
+	-- -- LSP Setup End -- --
 
-  -- Pyright extension for neovim --
-  -- { 'fannheyward/coc-pyright' },
+	-- Pyright extension for neovim --
+	-- { 'fannheyward/coc-pyright' },
 }
 
 return plugins
-
