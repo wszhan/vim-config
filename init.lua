@@ -26,5 +26,4 @@ require("lazy").setup(
 
 -- require('lsp')
 
-require('plug-configs')
 
