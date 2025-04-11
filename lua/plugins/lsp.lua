@@ -15,6 +15,7 @@ local plugins = {
 				ensure_installed = {
 					"lua_ls",
 					"clangd",
+                    "cmake",
 				},
 			})
 		end,
@@ -31,6 +32,10 @@ local plugins = {
 				capabilities = capabilities,
 			})
 			lspconfig.clangd.setup({
+				capabilities = capabilities,
+                -- cmd = {'clangd', '--log=verbose', '--pretty'}, -- Use LspLog to inspect debug log
+			})
+			lspconfig.cmake.setup({
 				capabilities = capabilities,
 			})
 		end,

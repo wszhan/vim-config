@@ -24,10 +24,13 @@ vim.diagnostic.config({
 	virtual_text = {
 		prefix = "●", -- could also be "■", "▶", "▎", "⮞", etc.
 		spacing = 4,
+		source = "if_many",
 	},
 	signs = true,
 	underline = true,
 	update_in_insert = false,
 	severity_sort = true,
+	float = {
+		source = "always",
+	},
 })
-

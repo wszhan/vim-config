@@ -1,5 +1,3 @@
--- require('plugins')
-
 
 -- init lazy.nvim
 -- explanations: https://lsp-zero.netlify.app/v3.x/tutorial.html#install-the-plugin-manager
@@ -17,13 +15,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
+
 require("lazy").setup(
-  -- require("lua.plugins"),
   "plugins"
   -- {} -- opts placeholder
 )
 
-
--- require('lsp')
 
 
