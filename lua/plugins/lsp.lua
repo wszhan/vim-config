@@ -46,6 +46,10 @@ local plugins = {
         root_dir = require("lspconfig.util").find_git_ancestor,
         on_attach = on_attach,
       })
+
+      vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+      vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
+      vim.keymap.set('n', 'lca', vim.lsp.buf.code_action, {})
     end,
   },
 }
