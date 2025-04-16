@@ -9,3 +9,4 @@ return {
 		require("neogit").setup({})
 	end,
 }
+

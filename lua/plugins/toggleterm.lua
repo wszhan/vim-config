@@ -4,6 +4,7 @@ return {
 	config = function()
 		require("toggleterm").setup({
 			open_mapping = [[<c-\>]],
+            shell = vim.fn.getenv("SHELL") .. " -l", -- fetch default shell and force login mode
 			direction = "float",
 			float_opts = {
 				border = "curved",
